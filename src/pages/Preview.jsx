@@ -1,13 +1,16 @@
-import { useContext, useRef } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { PortfolioContext } from '../App';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
+import { ClipLoader } from 'react-spinners';
 
 function Preview() {
   const { portfolioData } = useContext(PortfolioContext);
   const previewRef = useRef();
+  const [isExporting, setIsExporting] = useState(false);
 
   const handleExport = () => {
+    setIsExporting(true);
     html2canvas(previewRef.current, { scale: 2 }).then(canvas => {
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF();
@@ -21,6 +24,7 @@ function Preview() {
       link.download = 'portfolio.png';
       link.href = imgData;
       link.click();
+      setIsExporting(false);
     });
   };
 
@@ -58,8 +62,9 @@ function Preview() {
       <button
         onClick={handleExport}
         className="mt-6 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
+        disabled={isExporting}
       >
-        Export as PDF & PNG
+        {isExporting ? <ClipLoader size={20} color="#ffffff" /> : 'Export as PDF & PNG'}
       </button>
     </div>
   );
