@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import ThemeSwitcher from '../components/ThemeSwitcher';
 
 function Home() {
   return (
@@ -10,6 +11,9 @@ function Home() {
           Start Building
         </button>
       </Link>
+      <div className="mt-8">
+        <ThemeSwitcher />
+      </div>
     </div>
   );
 }
