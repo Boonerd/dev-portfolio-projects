@@ -1,1 +1,23 @@
-module.exports = { content: ['./index.html', './src/**/*.{js,jsx}'], darkMode: 'class', theme: { extend: { colors: { primary: { light: '#f3f4f6', dark: '#1f2937', blue: '#dbeafe', red: '#fee2e2' }, text: { light: '#111827', dark: '#f9fafb', blue: '#1e40af', red: '#b91c1c' } } } }, plugins: [] }; 
+module.exports = {
+  content: ['./index.html', './src/**/*.{js,jsx}'],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          light: '#f3f4f6',
+          dark: '#1f2937',
+          blue: '#dbeafe',
+          red: '#fee2e2'
+        },
+        text: {
+          light: '#111827',
+          dark: '#f9fafb',
+          blue: '#1e40af',
+          red: '#b91c1c'
+        }
+      }
+    }
+  },
+  plugins: []
+};
