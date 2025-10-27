@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Form from './pages/Form';
 import Preview from './pages/Preview';
@@ -18,15 +18,13 @@ function App() {
 
   return (
     <PortfolioContext.Provider value={{ portfolioData, setPortfolioData }}>
-      <Router>
-        <div className="min-h-screen bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/form" element={<Form />} />
-            <Route path="/preview" element={<Preview />} />
-          </Routes>
-        </div>
-      </Router>
+      <div className="min-h-screen bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/preview" element={<Preview />} />
+        </Routes>
+      </div>
     </PortfolioContext.Provider>
   );
 }
