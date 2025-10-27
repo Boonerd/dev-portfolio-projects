@@ -3,6 +3,8 @@ import { PortfolioContext } from '../App';
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 import { ClipLoader } from 'react-spinners';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
 function Preview() {
   const { portfolioData } = useContext(PortfolioContext);
@@ -29,21 +31,49 @@ function Preview() {
   };
 
   return (
-    <div ref={previewRef} className="min-h-screen p-4 bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark">
-      <h1 className="text-3xl font-bold mb-4">Portfolio Preview</h1>
-      <div className="mb-6">
+    <motion.div
+      ref={previewRef}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen p-4 bg-primary-light dark:bg-primary-dark text-text-light dark:text-text-dark"
+    >
+      <motion.h1
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="text-3xl font-bold mb-4"
+      >
+        Portfolio Preview
+      </motion.h1>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        className="mb-6"
+      >
         <h2 className="text-2xl font-semibold">{portfolioData.name || 'Your Name'}</h2>
         <p className="text-lg">{portfolioData.bio || 'Add your bio in the form!'}</p>
-      </div>
-      <div className="mb-6">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        className="mb-6"
+      >
         <h3 className="text-xl font-medium">Skills</h3>
         <ul className="list-disc list-inside">
           {portfolioData.skills.map((skill, i) => (
             <li key={i}>{skill}</li>
           ))}
         </ul>
-      </div>
-      <div className="mb-6">
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        className="mb-6"
+      >
         <h3 className="text-xl font-medium">Projects</h3>
         {portfolioData.projects.map((proj, i) => (
           <div key={i} className="mb-2">
@@ -52,21 +82,29 @@ function Preview() {
             <a href={proj.github} className="text-blue-500 hover:underline">GitHub</a>
           </div>
         ))}
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.8 }}
+        className="mb-6"
+      >
         <h3 className="text-xl font-medium">Social</h3>
-        <p>GitHub: {portfolioData.social.github}</p>
-        <p>LinkedIn: {portfolioData.social.linkedin}</p>
-        <p>Twitter: {portfolioData.social.twitter}</p>
-      </div>
-      <button
+        <p>GitHub: <FaGithub className="inline mr-1" /> {portfolioData.social.github}</p>
+        <p>LinkedIn: <FaLinkedin className="inline mr-1" /> {portfolioData.social.linkedin}</p>
+        <p>Twitter: <FaTwitter className="inline mr-1" /> {portfolioData.social.twitter}</p>
+      </motion.div>
+      <motion.button
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
         onClick={handleExport}
         className="mt-6 bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600"
         disabled={isExporting}
       >
         {isExporting ? <ClipLoader size={20} color="#ffffff" /> : 'Export as PDF & PNG'}
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   );
 }
 
