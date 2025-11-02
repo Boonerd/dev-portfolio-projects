@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EmoTrack</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets/undraw_credit-card-payments_y0vn.svg" alt="Track with heart" class="header-illustration" />
+    </div>
+    <h1>EmoTrack</h1>
+    <p class="tagline">Track money. Feel better. Spend wiser.</p>
+    <div class="theme-toggle">
+      <input type="checkbox" id="theme-switch" />
+      <label for="theme-switch"></label>
+    </div>
+  </header>
+
+  <main>
+    <div class="summary">
+      <div class="card">
+        <h3>Total This Month</h3>
+        <p class="amount">KSh <span id="total">0</span></p>
+      </div>
+      <div class="card">
+        <h3>Regretful</h3>
+        <p><span id="regret">0</span>%</p>
+      </div>
+      <div class="card">
+        <h3>Happy</h3>
+        <p><span id="happy">0</span>%</p>
+      </div>
+    </div>
+
+    <div class="chart-wrapper">
+      <canvas id="categoryChart"></canvas>
+    </div>
+
+    <div id="insight-card" class="card insight"></div>
+
+    <div id="expense-list"></div>
+
+    <div class="export-section">
+      <button id="export-btn">Export This Month (CSV)</button>
+      <button id="export-pdf-btn">Export PDF</button>
+    </div>
+
+    <div id="empty-state" class="empty">
+      <img src="assets/undraw_update_jvp1.svg" alt="No expenses yet" class="empty-illustration" />
+      <p>Start tracking your first expense!</p>
+    </div>
+  </main>
+
+  <button id="add-btn">+</button>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <h2>New Expense</h2>
+      <form id="expense-form">
+        <input type="number" id="amount" placeholder="Amount (KSh)" required />
+        <select id="category" required>
+          <option value="">Category</option>
+          <option>Food</option>
+          <option>Transport</option>
+          <option>Fun</option>
+          <option>Shopping</option>
+          <option>Other</option>
+        </select>
+        <input type="date" id="date" required />
+        
+        <div class="emotions">
+          <button type="button" class="emoji-btn" data-emotion="happy">Happy</button>
+          <button type="button" class="emoji-btn" data-emotion="neutral">Neutral</button>
+          <button type="button" class="emoji-btn" data-emotion="regret">Regret</button>
+          <button type="button" class="emoji-btn" data-emotion="excited">Excited</button>
+        </div>
+
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

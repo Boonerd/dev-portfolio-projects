@@ -1,0 +1,286 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #F8F9FA;
+  color: #1A1A1A;
+  padding: 20px;
+}
+
+/* === HEADER === */
+header {
+  background: #FF6B6B; /* Warm coral */
+  color: white;
+  padding: 24px 16px;
+  text-align: center;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.15);
+}
+
+.header-illustration {
+  width: 100px;
+  height: auto;
+  margin: 0 auto 16px;
+  display: block;
+  /* REMOVE filter — let SVG show original colors */
+}
+
+h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: white;
+}
+
+.tagline {
+  font-size: 15px;
+  opacity: 0.95;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Dark mode: invert header */
+.dark header {
+  background: #1E293B;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.dark .header-illustration {
+  filter: brightness(0) invert(1); /* Only white in dark mode */
+}
+
+.summary {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  min-width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.expense-item {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.expense-item .info {
+  font-weight: 600;
+}
+
+.expense-item .emotion {
+  font-size: 20px;
+}
+
+/* Floating Button */
+#add-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #4F9CF9;;
+  color: white;
+  font-size: 28px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(93,95,239,0.3);
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: white;
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #DDD;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button[type="submit"] {
+  background: #4F9CF9;
+  color: white;
+  border: none;
+  font-weight: 600;
+}
+
+.emotions {
+  display: flex;
+  gap: 6px;
+  margin: 12px 0;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.emoji-btn {
+  min-width: 44px;
+  padding: 8px 10px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 2px solid #E0E0E0;
+  background: white;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.emoji-btn.selected {
+  background: #E0F2FE;
+  border-color: #4F9CF9;
+  color: #4F9CF9;
+}
+
+.chart-container {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.export-section {
+  margin: 16px 0;
+  text-align: center;
+}
+
+#export-btn {
+  background: #10B981; /* Emerald green = trust + action */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+  transition: all 0.2s;
+}
+
+#export-btn:hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+/* Chart wrapper */
+.chart-wrapper {
+  background:#fff;
+  padding:16px;
+  border-radius:12px;
+  margin:20px 0;
+  box-shadow:0 2px 8px rgba(0,0,0,.05);
+}
+
+/* Insight card */
+.insight {
+  text-align:center;
+  font-size:14px;
+  color:#555;
+}
+
+/* Export button */
+.export-section { text-align:center; margin:16px 0; }
+#export-btn {
+  background:#10B981; color:#fff; border:none; padding:10px 18px;
+  border-radius:8px; font-weight:600; cursor:pointer;
+  box-shadow:0 2px 6px rgba(16,185,129,.2);
+}
+#export-btn:hover { background:#059669; }
+
+/* Delete button inside each expense */
+.delete-btn {
+  background:none; border:none; font-size:20px; cursor:pointer;
+  color:#ef4444;
+}
+.hero {
+  text-align: center;
+  margin: 20px 0;
+}
+.hero img { width: 180px; margin: 0 auto; display: block; }
+.hero p { margin-top: 12px; color: #666; font-size: 14px; }
+
+.empty {
+  text-align: center;
+  padding: 40px 20px;
+  color: #999;
+}
+.empty img { width: 120px; opacity: 0.7; }
+
+.header-illustration {
+  width: 120px;
+  height: auto;
+  margin: 0 auto 12px;
+  display: block;
+  filter: brightness(0) invert(1); /* White in light mode */
+}
+
+.empty-illustration {
+  width: 100px;
+  height: auto;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+
+/* Dark mode: make SVGs visible */
+.dark .header-illustration,
+.dark .empty-illustration {
+  filter: brightness(0) invert(1); /* Still white */
+}
