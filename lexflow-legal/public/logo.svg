@@ -1,0 +1,11 @@
+<!-- public/logo.svg -->
+<svg width="180" height="60" viewBox="0 0 180 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gavel -->
+  <path d="M25 15L15 25L25 35L35 25L25 15Z" fill="currentColor"/>
+  <path d="M25 25L20 20L25 15L30 20L25 25Z" fill="currentColor"/>
+  <line x1="15" y1="45" x2="35" y2="45" stroke="currentColor" stroke-width="3"/>
+  
+  <!-- Text: LexFlow -->
+  <text x="50" y="35" font-family="Playfair Display, serif" font-size="28" font-weight="700" fill="currentColor">LexFlow</text>
+  <text x="50" y="48" font-family="Inter, sans-serif" font-size="10" fill="currentColor" letter-spacing="1">LEGAL SOLUTIONS</text>
+</svg>

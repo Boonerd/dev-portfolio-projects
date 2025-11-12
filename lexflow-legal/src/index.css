@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* LIGHT MODE */
+:root {
+  --primary: #1e293b;
+  --accent: #d4af37;
+  --bg: #ffffff;
+  --text: #1e293b;
+  --card: #f8fafc;
+}
+
+/* DARK MODE */
+.dark {
+  --primary: #e2e8f0;
+  --accent: #d4af37;
+  --bg: #0f172a;
+  --text: #f1f5f9;
+  --card: #1e293b;
+}
+
+/* GLOBAL */
+html, body, #root, [data-theme] {
+  @apply bg-[var(--bg)] text-[var(--text)] transition-colors duration-300;
+}
+.card-hover {
+  @apply transition hover:shadow-xl hover:-translate-y-1;
+}
