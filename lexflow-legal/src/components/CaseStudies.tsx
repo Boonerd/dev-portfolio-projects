@@ -56,10 +56,10 @@ export default function CaseStudies() {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Track Record</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-muted-xl mb-8">
             Real cases. Real results. 500+ clients served.
           </p>
-          <div className="flex justify-center gap-8 text-sm text-gray-500 dark:text-gray-400">
+          <div className="flex justify-center gap-8 text-sm text-gray-500 text-muted mb-4">
             <span>98% Success Rate</span>
             <span>•</span>
             <span>$50M+ Recovered</span>
@@ -96,10 +96,10 @@ export default function CaseStudies() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-16"
         >
-        <a href="#contact" className="inline-flex items-center px-8 py-3.5 bg-white text-[var(--primary)] font-medium rounded-lg hover:scale-105 transition shadow-md">
-  Your Case Starts Here
-  <ArrowRight className="ml-2 w-5 h-5" />
-</a>
+     <a href="#contact" className="btn-primary inline-flex items-center">
+      Your Case Starts Here
+        <ArrowRight className="ml-2 w-5 h-5" />
+        </a>
         </motion.div>
       </div>
     </section>
