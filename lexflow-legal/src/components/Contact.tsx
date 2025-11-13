@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
+import LawyerFrown from './icons/LawyerFrown';
 
 export default function Contact() {
   const form = useRef<HTMLFormElement>(null);
@@ -45,6 +46,10 @@ export default function Contact() {
             </button>
           </form>
           {status && <p className="mt-4 text-center text-sm text-[var(--accent)] font-medium">{status}</p>}
+        </div>
+        {/* ANIMATED LAWYER — BOTTOM CENTER */}
+        <div className="flex justify-center mt-16">
+          <LawyerFrown className="w-32 h-32 sm:w-40 sm:h-40 opacity-90" />
         </div>
       </div>
     </section>

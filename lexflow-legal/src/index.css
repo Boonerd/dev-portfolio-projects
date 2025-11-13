@@ -88,3 +88,50 @@ html, body, #root {
 .text-muted-xl { @apply text-xl text-[var(--text-muted)]; }
 .text-muted-lg { @apply text-lg text-[var(--text-muted)]; }
 .text-muted-sm { @apply text-sm text-[var(--text-muted)]; }
+/* SUBTLE BOBBING */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+.animate-bob {
+  animation: bob 3s ease-in-out infinite;
+}
+
+/* FROWN PULSE */
+@keyframes frown {
+  0%, 100% { d: path("M40 40 Q50 45 60 40"); }
+  50% { d: path("M40 40 Q50 48 60 40"); }
+}
+.animate-frown {
+  animation: frown 2s ease-in-out infinite;
+}
+
+/* TIE WIGGLE */
+@keyframes tie {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+}
+.animate-tie {
+  transform-origin: 50% 65%;
+  animation: tie 2.5s ease-in-out infinite;
+}
+
+/* BRIEFCASE BOUNCE */
+@keyframes briefcase {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+.animate-briefcase {
+  animation: briefcase 2s ease-in-out infinite;
+}
+
+/* HEAD NOD */
+@keyframes head {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+.animate-head {
+  transform-origin: 50% 35%;
+  animation: head 3s ease-in-out infinite;
+}
