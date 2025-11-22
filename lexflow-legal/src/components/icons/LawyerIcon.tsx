@@ -19,7 +19,7 @@ const LawyerIcon: React.FC<LawyerIconProps> = ({
   const MaleAdvocate = () => (
     <>
       <g id="lawyer-body-male">
-        <path d="M35 60 C  Pages 30 70, 30 90, 35 110 H 85 C 90 90, 90 70, 85 60 Z" fill="#1e293b" />
+        <path d="M35 60 C 30 70, 30 90, 35 110 H 85 C 90 90, 90 70, 85 60 Z" fill="#1e293b" />
         <path d="M50 60 L60 55 L70 60 L60 70 Z" fill="#f1f5f9" />
         <path d="M50 60 L60 70 L70 60 V 80 H 50 V 60 Z" fill="#f1f5f9" />
         <path d="M50 60 L35 60 C 45 75, 45 85, 50 100 V 60 Z" fill="#29374d" />
