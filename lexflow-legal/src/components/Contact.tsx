@@ -1,4 +1,3 @@
-// src/components/Contact.tsx — FINAL WORKING CODE
 import React, { useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import LawyerIcon from './icons/LawyerIcon';
